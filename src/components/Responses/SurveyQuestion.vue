@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AnswerPicker from "./AnswerPicker.vue";
-import { defineProps, PropType } from "vue";
+import { PropType } from "vue";
 import type { Answer } from "../models/questions";
 defineProps({
   slug: {

@@ -25,9 +25,9 @@ const App = defineComponent({
 
   setup() {
     // Computed properties
-    const overallProgress = computed((): Number => ((pagesState.currentPage) / (pagesState.lastPage + 1)) * 100);
-    const totalNumberOfPages = computed((): Number => questions.length); // Length of the array, keep in mind that it's always index + 1.
-    const humanCurrentPage = computed((): Number => pagesState.currentPage + 1);
+    const totalNumberOfPages = computed((): number => questions.length); // Length of the array, keep in mind that it's always index + 1.
+    const overallProgress = computed((): number => Math.round((pagesState.currentPage) / totalNumberOfPages.value * 100));
+    const humanCurrentPage = computed((): number => pagesState.currentPage + 1);
 
     // Data properties
     const pagesState = reactive({
