@@ -5,12 +5,13 @@ import { computed, inject } from "vue"
 const pagesState = inject('pagesState');
 
 const humanCurrentPage = inject('humanCurrentPage');
-const humanNumberOfPages = inject('totalNumberOfPages');
+const totalNumberOfPages = inject('totalNumberOfPages');
 
 // Computed Properties
+const lastPageIndex = computed((): number => totalNumberOfPages.value - 1);
 const prevPossible = computed((): boolean => pagesState.currentPage !== 0);
-const nextPossible = computed((): boolean => pagesState.currentPage < pagesState.lastPage);
-const resultAvailable = computed((): boolean => pagesState.currentPage == pagesState.lastPage);
+const nextPossible = computed((): boolean => pagesState.currentPage < lastPageIndex.value);
+const resultAvailable = computed((): boolean => pagesState.currentPage == lastPageIndex.value);
 
 // Methods
 const navigatePage = (amount: number) => pagesState.currentPage += amount;
@@ -19,7 +20,7 @@ const showResults = () => pagesState.showSurveyResults = true;
 
 <template>
   <div class="survey-pagination" v-if="!pagesState.showSurveyResults">
-    <p>Pagina {{ humanCurrentPage }} van {{ humanNumberOfPages }}</p>
+    <p>Pagina {{ humanCurrentPage }} van {{ totalNumberOfPages }}</p>
     <button class="prev" :disabled="!prevPossible" @click="navigatePage(-1)">
       Vorige
     </button>

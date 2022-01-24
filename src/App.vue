@@ -24,18 +24,17 @@ const App = defineComponent({
   },
 
   setup() {
-    // Data properties
-    const pagesState = reactive({
-      currentPage: 0, // the page
-      lastPage: 3,
-      showSurveyResults: false, // whether or not to show the Survey Results (and hide the questions)
-    });
-    const questionResponses: Responses = reactive({}); // place to save responses to answers.
-
     // Computed properties
     const overallProgress = computed((): Number => ((pagesState.currentPage) / (pagesState.lastPage + 1)) * 100);
     const totalNumberOfPages = computed((): Number => questions.length); // Length of the array, keep in mind that it's always index + 1.
     const humanCurrentPage = computed((): Number => pagesState.currentPage + 1);
+
+    // Data properties
+    const pagesState = reactive({
+      currentPage: 0, // the page
+      showSurveyResults: false, // whether or not to show the Survey Results (and hide the questions)
+    });
+    const questionResponses: Responses = reactive({}); // place to save responses to answers.
 
     // Provide / Inject API: Non-reactive
     provide('overallProgress', overallProgress);
@@ -61,7 +60,7 @@ export default App;
 
 <template>
   <div class="survey-container">
-    <h1>QuickScan</h1>
+    <h1>QuickScan van Opleiding naar Werk</h1>
 
     <div class="survey">
       <Progressbar

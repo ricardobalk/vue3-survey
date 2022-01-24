@@ -4,7 +4,7 @@ export const questions: Array<SurveyQuestions> = [
   [
     {
       "slug": "1-beleid",
-      "category": "Het beleid",
+      "category": "Beleidsafspraken",
       "label": "In ons organisatiebeleid is vastgelegd dat elke student de ondersteuning krijgt die nodig is om succesvol naar werk te kunnen uitstromen.",
       "answers": [
         {"score": 3, "label": "Volledig van toepassing"},
@@ -24,9 +24,6 @@ export const questions: Array<SurveyQuestions> = [
         {"score": 0, "label": "Niet van toepassing"},
       ]
     },
-  ],
-
-  [
     {
       "slug": "3-stages",
       "category": "Stages",
@@ -38,6 +35,9 @@ export const questions: Array<SurveyQuestions> = [
         {"score": 0, "label": "Niet van toepassing"},
       ]
     },
+  ],
+
+  [
     {
       "slug": "4-interne-samenwerking",
       "category": "Interne samenwerking",
@@ -49,12 +49,9 @@ export const questions: Array<SurveyQuestions> = [
         {"score": 0, "label": "Niet van toepassing"},
       ]
     },
-  ],
-
-  [
     {
       "slug": "5-kennis-vaardigheden-medewerkers",
-      "category": "Kennis en vaardigheden medewerkers",
+      "category": "Competenties medewerkers",
       "label": "We weten welke vaardigheden medewerkers nodig hebben bij de begeleiding van studenten met een extra ondersteuningsbehoefte.",
       "answers": [
         {"score": 3, "label": "Volledig van toepassing"},
@@ -79,7 +76,7 @@ export const questions: Array<SurveyQuestions> = [
   [
     {
       "slug": "7-student-extra-ondersteuningsbehoefte",
-      "category": "Student met extra ondersteuningsbehoefte",
+      "category": "Student in beeld",
       "label": "We weten hoe succesvol de studenten met een extra ondersteuningsbehoefte op onze school zijn in de overgang van opleiding naar werk.",
       "answers": [
         {"score": 3, "label": "Volledig van toepassing"},
